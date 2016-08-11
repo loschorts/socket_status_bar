@@ -4,18 +4,17 @@ function Counter(ws){
 }
 
 Counter.prototype.start = function(){
-	var _counter = this;
 	this.interval = setInterval(function(){
-		_counter.data -= 1;
+		this.data -= 1;
 
-		console.log('sending ' + _counter.data + ' as data');
+		console.log('sending ' + this.data + ' as data');
 
-		_counter.send();
+		this.send();
 
-		if (_counter.data <= 0) {
-			_counter.stop();
+		if (this.data <= 0) {
+			this.stop();
 		}
-	}, 500);
+	}.bind(this), 500);
 };
 
 Counter.prototype.send = function(){
