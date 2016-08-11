@@ -8,23 +8,23 @@ Counter.prototype.start = function(){
 	this.interval = setInterval(function(){
 		_counter.data -= 1;
 
-		console.log('sending ' + _counter.data + ' as data')
+		console.log('sending ' + _counter.data + ' as data');
 
-		try {	
-			_counter.send();
-		} catch(err) {
-			console.log('connection interrupted')
-			_counter.stop(); 
-		}
+		_counter.send();
 
-		if (_counter.data < 0) {
+		if (_counter.data <= 0) {
 			_counter.stop();
 		}
 	}, 500);
 };
 
 Counter.prototype.send = function(){
-	this.ws.send(JSON.stringify(this.data));
+	try {	
+		this.ws.send(JSON.stringify(this.data));
+	} catch(err) {
+		console.log('connection interrupted');
+		this.stop(); 
+	}
 }
 
 Counter.prototype.stop = function(){
