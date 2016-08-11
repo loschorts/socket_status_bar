@@ -1,7 +1,7 @@
 var WebSocketServer = require('ws').Server;
 var Counter = require("./counter.js");
 
-wss = new WebSocketServer({ port: 8080 });
+var wss = new WebSocketServer({ port: 8080 });
 
 console.log("web socket open at 'ws://localhost:8080'");
 
