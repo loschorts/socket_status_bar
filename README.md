@@ -2,6 +2,7 @@
 
 ## Installation
 0.	`brew install node` (if you don't have node)
+0. `npm install -g webpack`
 0.	`./install.sh`
 
 ## Start the Server
