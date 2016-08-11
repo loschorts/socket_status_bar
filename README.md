@@ -12,3 +12,19 @@
 
 `open client/index.html`
 
+## Change the number of segments or color
+
+0.	`cd clients`
+
+0.	In `client/index.js`, tweak this and save: 
+
+	```
+		<StatusBar 
+		color="blue"
+		segments={5}
+		string1="sup"
+		string2="jefe"/>
+	```
+0.	`webpack`
+
+0.	Refresh.
