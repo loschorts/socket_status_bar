@@ -7,7 +7,7 @@
 
 ## Start the Server
 
-`node server/server.js` (or `npm start` from `/client`).
+`node server/server.js` (or `npm start` from `/server`).
 
 ## View the Widget
 
